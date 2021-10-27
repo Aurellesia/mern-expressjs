@@ -1,45 +1,25 @@
 .banner {
-  display: flex;
-  flex-direction: row;
-
-  background-color: #faebd7;
+  @include flex(row, $AntiqueWhite);
 
   .title-banner-container {
-    height: 100vh;
-    width: 100%;
-    display: flex;
-    justify-content: left;
+    align-self: center;
 
     .title-banner {
       margin-top: 15%;
       margin-left: 2rem;
+
       .title {
-        font-size: 4rem;
-        margin: 2rem 0;
+        @include title;
       }
       .intro {
         margin: 1rem 0;
       }
       .btn-banner {
-        color: #000;
-        margin-top: 2rem;
-        padding: 0.6rem 2rem;
-        display: inline-block;
-        text-decoration: none;
-        background-color: #ffa07a;
-        border: none;
-
-        &:hover {
-          background-color: #fff;
-          cursor: pointer;
-          transition: 0.3s;
-        }
+        @include button-page;
       }
     }
   }
   .img-banner-container {
-    text-align: center;
-
     .img-banner {
       height: 100vh;
     }

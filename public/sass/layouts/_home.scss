@@ -1,172 +1,82 @@
+.home-text-container,
+.vegies-image-container {
+  @include left-container;
+}
+
+.home-image-container,
+.fruits-image-container {
+  @include right-container;
+}
+
+.btn-about,
+.btn-vegies,
+.btn-fruits,
+.btn-contact {
+  @include button-page;
+}
+
+.home-title,
+.vegies-title,
+.fruits-title {
+  @include title;
+}
+
 .home-container {
-  display: flex;
-  flex-direction: row;
-  background-color: #faebd7;
+  @include flex(row, $AntiqueWhite);
   height: 80%;
-
-  .home-text-container {
-    width: 50%;
-    padding-top: 6rem;
-    text-align: right;
-    margin-right: 1rem;
-    .home-text {
-      margin-left: 7rem;
-      .title {
-        font-size: 4rem;
-        padding-bottom: 2rem;
-      }
-      .btn-about {
-        color: #000;
-        margin-top: 2rem;
-        padding: 0.6rem 2rem;
-        display: inline-block;
-        text-decoration: none;
-        background-color: #ffb699;
-        border: none;
-
-        &:hover {
-          background-color: #ffa07a;
-          cursor: pointer;
-          transition: 0.3s;
-        }
-      }
-    }
+  .home-text {
+    @include text($ml: 7rem);
   }
-
-  .home-image-container {
-    width: 50%;
-    text-align: center;
-    .home-image {
-      width: 60%;
-      padding-top: 5rem;
-    }
+  .home-image {
+    @include image($w: 60%);
   }
 }
 
 .vegies-container {
+  @include flex(row);
   height: 100vh;
-  display: flex;
-  flex-direction: row;
-
   .vegies-image-container {
-    width: 50%;
-    text-align: center;
-    margin-top: 6rem;
     margin-left: 2rem;
     .vegies-image {
-      width: 100%;
-      padding-top: 5rem;
+      @include image;
     }
   }
+
   .vegies-text-container {
-    width: 50%;
+    @include right-container($ta: left);
     padding-top: 16rem;
     .vegies-text {
-      margin-left: 5rem;
-      margin-right: 3rem;
-      .title {
-        font-size: 4rem;
-        padding-bottom: 2rem;
-      }
-      .btn-vegies {
-        color: #000;
-        margin-top: 2rem;
-        padding: 0.6rem 2rem;
-        display: inline-block;
-        text-decoration: none;
-        background-color: #ffb699;
-        border: none;
-
-        &:hover {
-          background-color: #ffa07a;
-          cursor: pointer;
-          transition: 0.3s;
-        }
-      }
+      @include text($ml: 5rem, $mr: 3rem);
     }
   }
 }
 
 .fruits-container {
-  display: flex;
-  flex-direction: row;
-  background-color: #faebd7;
+  @include flex(row, $AntiqueWhite);
   height: 80%;
-
   .fruits-text-container {
-    width: 50%;
-    padding-top: 6rem;
-    text-align: right;
-    margin-right: 5rem;
+    @include left-container($mr: 5rem);
     .fruits-text {
-      margin-left: 7rem;
-      .title {
-        font-size: 4rem;
-        padding-bottom: 2rem;
-      }
-    }
-    .btn-fruits {
-      color: #000;
-      margin-top: 2rem;
-      padding: 0.6rem 2rem;
-      display: inline-block;
-      text-decoration: none;
-      background-color: #ffb699;
-      border: none;
-
-      &:hover {
-        background-color: #ffa07a;
-        cursor: pointer;
-        transition: 0.3s;
-      }
+      @include text($ml: 5rem);
     }
   }
-
-  .fruits-image-container {
-    width: 50%;
-    text-align: center;
-    .fruits-image {
-      width: 90%;
-      padding-top: 2rem;
-    }
+  .fruits-image {
+    @include image($w: 90%, $pt: 2rem);
   }
 }
 
 .galery-container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: auto;
+  @include grid(3);
   .galery-image {
-    width: 27.05rem;
+    @include image($w: 27.05rem, $pt: 0);
   }
 }
 
 .contact-container {
-  display: flex;
-  justify-content: center;
+  @include flex(column, $ta: center);
   align-self: center;
   padding: 5rem;
-  flex-direction: column;
-  text-align: center;
-
-  .contact-content {
-    .contact-text {
-      font-size: 4rem;
-    }
-    .btn-contact {
-      color: #000;
-      margin-top: 2rem;
-      padding: 0.6rem 2rem;
-      display: inline-block;
-      text-decoration: none;
-      background-color: #ffb699;
-      border: none;
-
-      &:hover {
-        background-color: #ffa07a;
-        cursor: pointer;
-        transition: 0.3s;
-      }
-    }
+  .contact-text {
+    @include text($fontSize: 4rem);
   }
 }

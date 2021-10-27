@@ -1,28 +1,25 @@
 .about-image {
-  width: 100%;
+  @include image($pt: 0);
 }
+
 .about-container {
-  background-color: #faebd7;
-  height: 70vh;
-  display: flex;
-  flex-direction: row;
+  @include flex(row, $AntiqueWhite);
   margin-top: -2rem;
+  height: 70vh;
 
   .title-text {
-    width: 50%;
-    text-align: right;
-    margin-right: 2rem;
-    padding-top: 8rem;
-    .title {
-      font-size: 3rem;
+    @include left-container;
+    padding-top: 7rem;
+    .about-title {
+      @include title;
     }
   }
   .about-text {
-    width: 50%;
+    @include right-container($ta: left);
     margin-left: 2rem;
     padding-top: 6rem;
     .text {
-      margin-right: 6rem;
+      @include text($mr: 6rem);
     }
   }
 }
